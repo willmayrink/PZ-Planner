@@ -6,13 +6,12 @@ import mayrink.will.PZ_Planner.repository.PlacesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
 @Controller
+
 public class PlacesController {
 
     @Autowired
@@ -23,12 +22,24 @@ public class PlacesController {
         model.addAttribute("place", new Places());
         return "add-place";
     }
+
+    @RequestMapping("/")
+    public String rootPage(Model model){
+        return "index";
+    }
     @GetMapping("/places")
-    public String listAllPlaces(Model model){
+    public String listAllPlaces(Model model) {
         model.addAttribute("places", placesRepository.findAll());
         return "places-list";
     }
-
+    @GetMapping("places/{id}")
+    public String listSpecificPlace(@PathVariable("id") Long id, Model model) {
+        placesRepository.findById(id).ifPresentOrElse(
+                place -> model.addAttribute("place", place), // Se encontrado, adiciona ao model
+                () -> model.addAttribute("error", "Place not found with ID: " + id) // Se não encontrado
+        );
+        return "specific-place"; // Nome do template novo
+    }
     @PostMapping("/add-place")
     public String addPlace(@RequestParam String description,
                            @RequestParam String city,
