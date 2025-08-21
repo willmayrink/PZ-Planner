@@ -23,6 +23,11 @@ public class PlacesController {
         model.addAttribute("place", new Places());
         return "add-place";
     }
+    @GetMapping("/places")
+    public String listAllPlaces(Model model){
+        model.addAttribute("places", placesRepository.findAll());
+        return "places-list";
+    }
 
     @PostMapping("/add-place")
     public String addPlace(@RequestParam String description,
@@ -41,5 +46,7 @@ public class PlacesController {
         placesRepository.save(place);
         model.addAttribute("message", "Place added successfully!");
         return "add-place";
+
+
     }
 }
