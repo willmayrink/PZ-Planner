@@ -17,11 +17,7 @@ public class PlacesController {
     @Autowired
     private PlacesRepository placesRepository;
 
-    @GetMapping("/add-place")
-    public String showAddPlaceForm(Model model) {
-        model.addAttribute("place", new Places());
-        return "add-place";
-    }
+
 
     @RequestMapping("/")
     public String rootPage(Model model){
@@ -40,6 +36,13 @@ public class PlacesController {
         );
         return "specific-place"; // Nome do template novo
     }
+
+    @GetMapping("/add-place")
+    public String showAddPlaceForm(Model model) {
+        model.addAttribute("place", new Places());
+        return "add-place";
+    }
+
     @PostMapping("/add-place")
     public String addPlace(@RequestParam String description,
                            @RequestParam String city,

@@ -23,7 +23,7 @@
         <div class="d-flex flex-grow-1 justify-content-center align-items-center">
             <div class="container custom-form-bg shadow-lg pt-5 col-lg-3 rounded-4 p-lg-4">
                 <span class="badge fs-5 rounded d-flex justify-content-center">Project Zomboid Places</span>
-                <form th:action="@{/add-place}" method="post" class="mb-5 mt-4">
+                <form th:action="@{/add-place}" method="post" class="mb-4 mt-4">
                     <div class="input-group mb-4">
                         <span class="input-group-text" id="basic-addon1"><span class="font-form-label">Description</span></span>
                         <input type="text" class="form-control" id="description" name="description" placeholder="Description" required aria-label="Place" aria-describedby="basic-addon1">
@@ -45,7 +45,7 @@
                         <span class="input-group-text rounded-start" id="basic-addon4"><span class="font-form-coordinates">Coordinate Y</span></span>
                         <input type="number" class="form-control rounded-end" id="coordY" name="coordY" placeholder="Ex: 67890" required aria-label="Place" aria-describedby="basic-addon4">
                     </div>
-                    <div class="d-flex justify-content-end"><button type="submit" class="btn btn-success me-1 mt-3 badge">Save</button></div>
+                    <div class="d-flex justify-content-end"><button type="submit" class="btn btn-success me-1 mt-3 badge">Save</button><a href="http://localhost:8080/"><span class="badge btn btn-danger mt-3">Back</span></a></div>
                 </form>
                 <div th:if="${message}" class="alert alert-success mt-3 text-center d-none" role="alert">
                     <span th:text="${message}"></span>
