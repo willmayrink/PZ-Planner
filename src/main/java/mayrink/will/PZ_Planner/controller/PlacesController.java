@@ -25,7 +25,7 @@ public class PlacesController {
     }
     @GetMapping("/places")
     public String listAllPlaces(Model model) {
-        model.addAttribute("places", placesRepository.findAll());
+        model.addAttribute("places", placesRepository.getPlacesOrderByName());
         return "places-list";
     }
     @GetMapping("places/{id}")

@@ -18,3 +18,8 @@
 main{
     font-family: "Montserrat", sans-serif;
 }
+
+.badge.text-bg-indigo  { background-color: #4b0082 !important; } /* deep indigo */
+.badge.text-bg-olive   { background-color: #808000 !important; } /* olive */
+.badge.text-bg-teal    { background-color: #008080 !important; } /* teal */
+.badge.text-bg-purple  { background-color: #6a0dad !important; } /* purple */

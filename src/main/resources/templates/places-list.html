@@ -26,20 +26,36 @@
                 <div class="container">
                     <table class="table table-hover table-striped table-sm mt-4">
                         <thead>
-                            <tr>
+                            <tr style="font-size:0.9rem">
                                 <th class="rounded-top-4 rounded-end-0 p-2">ID</th>
+                                <th>Name</th>
                                 <th>Description</th>
                                 <th>City</th>
-                                <th>Coordinate X</th>
-                                <th>Coordinate Y</th>
+                                <th style="font-size:.6rem;">Coordinate X</th>
+                                <th style="font-size:.6rem;">Coordinate Y</th>
                                 <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="place : ${places}">
+                        <tr th:each="place : ${places}" style="font-size:0.7rem;">
                                 <td th:text="${place.id}"></td>
+                                <td th:text="${place.name}"></td>
                                 <td th:text="${place.description}"></td>
-                                <td th:text="${place.city}"></td>
+                                <td th:switch="${place.city}" class="text-center">
+                                    <span th:case="'Rosewood'" th:text="${place.city}" class="badge text-bg-success"></span>
+                                    <span th:case="'Irvington'" th:text="${place.city}" class="badge text-bg-primary"></span>
+                                    <span th:case="'Louisville'" th:text="${place.city}" class="badge text-bg-danger"></span>
+                                    <span th:case="'Echo Creek'" th:text="${place.city}" class="badge text-bg-info"></span>
+                                    <span th:case="'West Point'" th:text="${place.city}" class="badge text-bg-warning"></span>
+                                    <span th:case="'Dixie'" th:text="${place.city}" class="badge text-bg-dark"></span>
+                                    <span th:case="'Brandenburg'" th:text="${place.city}" class="badge text-bg-warning"></span>
+                                    <span th:case="'Muldraugh'"     th:text="${place.city}" class="badge text-bg-secondary"></span>   <!-- gray -->
+                                    <span th:case="'March Ridge'"   th:text="${place.city}" class="badge text-bg-light"></span>      <!-- light gray -->
+                                    <span th:case="'Ekron'"         th:text="${place.city}" class="badge text-bg-indigo"></span>    <!-- custom indigo (see CSS below) -->
+                                    <span th:case="'Doe Valley'"    th:text="${place.city}" class="badge text-bg-olive"></span>      <!-- custom olive (see CSS) -->
+                                    <span th:case="'Fallas Lake'"   th:text="${place.city}" class="badge text-bg-teal"></span>       <!-- custom teal (see CSS) -->
+                                    <span th:case="'Valley Station'"th:text="${place.city}" class="badge text-bg-purple"></span>     <!-- custom purple (see CSS) -->
+                                </td>
                                 <td th:text="${place.coordX}"></td>
                                 <td th:text="${place.coordY}"></td>
                                 <td>
