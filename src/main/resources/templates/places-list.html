@@ -26,21 +26,19 @@
                 <div class="container">
                     <table class="table table-hover table-striped table-sm mt-4">
                         <thead>
-                            <tr style="font-size:0.9rem">
-                                <th class="rounded-top-4 rounded-end-0 p-2">ID</th>
+                            <tr style="font-size:0.6rem">
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>City</th>
-                                <th style="font-size:.6rem;">Coordinate X</th>
-                                <th style="font-size:.6rem;">Coordinate Y</th>
+                                <th class="text-nowrap">Coordinates X</th>
+                                <th class="text-nowrap">Coordinates Y</th>
                                 <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr th:each="place : ${places}" style="font-size:0.7rem;">
-                                <td th:text="${place.id}"></td>
                                 <td th:text="${place.name}"></td>
-                                <td th:text="${place.description}" class="fst-italic"></td>
+                                <td th:text="${place.description}" class="fst-italic text-wrap"></td>
                                 <td th:switch="${place.city}" class="text-center">
                                     <span th:case="'Rosewood'" th:text="${place.city}" class="badge text-bg-success"></span>
                                     <span th:case="'Irvington'" th:text="${place.city}" class="badge text-bg-primary"></span>
