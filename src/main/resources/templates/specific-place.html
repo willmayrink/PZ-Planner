@@ -25,8 +25,8 @@
                 <span class="badge fs-5 rounded d-flex justify-content-center">Place Details</span>
                 <div th:if="${place}" class="mt-4">
                     <div class="input-group mb-4">
-                        <span class="input-group-text" id="basic-addon1"><span class="font-form-label">Description</span></span>
-                        <input type="text" class="form-control" id="description" name="description" placeholder="" required aria-label="Place" aria-describedby="basic-addon1"  th:value="${place.description}" disabled>
+                        <span class="input-group-text" id="basic-addon1"><span class="font-form-label">Name</span></span>
+                        <input type="text" class="form-control" id="description" name="description" placeholder="" required aria-label="Place" aria-describedby="basic-addon1"  th:value="${place.name}" disabled>
                     </div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon2"><span class="font-form-label">City</span></span>

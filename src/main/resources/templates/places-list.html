@@ -55,6 +55,7 @@
                                     <span th:case="'Doe Valley'"    th:text="${place.city}" class="badge text-bg-olive"></span>      <!-- custom olive (see CSS) -->
                                     <span th:case="'Fallas Lake'"   th:text="${place.city}" class="badge text-bg-teal"></span>       <!-- custom teal (see CSS) -->
                                     <span th:case="'Valley Station'"th:text="${place.city}" class="badge text-bg-purple"></span>     <!-- custom purple (see CSS) -->
+                                    <span th:case="*" th:text="${place.city}" class="badge text-bg-light"></span>
                                 </td>
                                 <td th:text="${place.coordX}"></td>
                                 <td th:text="${place.coordY}"></td>
