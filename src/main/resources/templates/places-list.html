@@ -40,7 +40,7 @@
                         <tr th:each="place : ${places}" style="font-size:0.7rem;">
                                 <td th:text="${place.id}"></td>
                                 <td th:text="${place.name}"></td>
-                                <td th:text="${place.description}"></td>
+                                <td th:text="${place.description}" class="fst-italic"></td>
                                 <td th:switch="${place.city}" class="text-center">
                                     <span th:case="'Rosewood'" th:text="${place.city}" class="badge text-bg-success"></span>
                                     <span th:case="'Irvington'" th:text="${place.city}" class="badge text-bg-primary"></span>
@@ -57,8 +57,8 @@
                                     <span th:case="'Valley Station'"th:text="${place.city}" class="badge text-bg-purple"></span>     <!-- custom purple (see CSS) -->
                                     <span th:case="*" th:text="${place.city}" class="badge text-bg-light"></span>
                                 </td>
-                                <td th:text="${place.coordX}"></td>
-                                <td th:text="${place.coordY}"></td>
+                                <td th:text="${place.coordX}" class="fw-bold"></td>
+                                <td th:text="${place.coordY}" class="fw-bold"></td>
                                 <td>
                                     <a th:href="'/places/' + ${place.id}" class="btn btn-sm btn-light text-dark badge">Link</a>
                                 </td>
