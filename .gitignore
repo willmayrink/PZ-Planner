@@ -36,3 +36,4 @@ build/
 ### config ###
 *.properties
 *.yml
+src/main/resources/application.properties

@@ -23,6 +23,7 @@ public class Places {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
     private String description;
     private String city;
 
